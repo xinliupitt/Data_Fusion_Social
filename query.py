@@ -78,10 +78,10 @@ def verbose(rev_out, score_out, rank):
     _num_rev = rev_out['reviews']['num_reviews']
     _num_yelp = rev_out['reviews']['num_Yelp']
     _num_fs = rev_out['reviews']['num_FS']
-    
+    _name = rev_out['name']
     
     print('\n')
-    print('-------------------- Venue', rank, '-------------------------')
+    print('-------------------- Venue', rank, ':', _name, '-------------------------')
     print('Address:', _address)
     print('Phone Number:', _phone)
     print('------------------')
