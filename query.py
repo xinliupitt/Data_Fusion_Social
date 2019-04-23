@@ -5,7 +5,7 @@ import csv
 import numpy as np
 import pandas as pd
 import argparse
-
+import math
 
 def numReview(inst):
     return inst['reviews']['num_reviews']
@@ -55,17 +55,20 @@ desc = True
 #-------------------------
 
 def score2quality(score):
+    if math.isnan(score):
+        return 'N/A'
     if score < 2:
         _quality = 'poor'
     elif score < 2.5:
         _quality = 'not good'
-    elif score < 3.5:
+    elif score < 3.1:
         _quality = 'fair'
     elif score < 4:
         _quality = 'good'
     else:
         _quality = 'excellent'
     return _quality
+
 
           
 def verbose(rev_out, score_out, rank):
